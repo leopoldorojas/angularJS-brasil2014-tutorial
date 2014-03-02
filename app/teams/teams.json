@@ -1,5 +1,5 @@
-{
-    "costa_rica": {
+[
+    {
         "id": "costa_rica", 
         "imageUrl": "img/teams/costa-rica.0.jpg", 
         "name": "Costa Rica",
@@ -12,7 +12,7 @@
         "rankingFifa": 35
     },
 
-    "uruguay": {
+    {
         "id": "uruguay", 
         "imageUrl": "img/teams/uruguay.0.jpg", 
         "name": "Uruguay",
@@ -24,4 +24,4 @@
         "worldCups": 11,
         "rankingFifa": 7
     }  
-}
+]
