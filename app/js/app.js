@@ -9,13 +9,15 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
-  'myApp.animations'
+  'myApp.animations',
+  'firebase'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/teams', {templateUrl: 'partials/team-list.html', controller: 'TeamListCtrl'});
   $routeProvider.when('/teams/:teamId', {templateUrl: 'partials/team-detail.html', controller: 'TeamDetailCtrl'});
   $routeProvider.otherwise({redirectTo: '/teams'});
 }]).
-factory('Teams', function($resource){
-	return $resource('teams/:teamId.json', {teamId:'teams'});
+value('fbURL', 'https://sizzling-fire-7612.firebaseio.com/').
+factory('Teams', function($firebase, fbURL){
+	return $firebase(new Firebase(fbURL));
 });
