@@ -8,11 +8,9 @@ angular.module('myApp.controllers', []).
   	$scope.teams = Teams.query();
   }])
   .controller('TeamDetailCtrl', ['$scope', '$routeParams', 'Teams', function($scope, $routeParams, Teams) {
-
     $scope.team = Teams.get({teamId: $routeParams.teamId});
 
-  	//$scope.team = teams.filter(function(team) {
-  	//	return team.id == $routeParams.teamId
-  	//})[0];
-
+    $scope.setImage = function(imageUrl) {
+    	$scope.mainImageUrl = imageUrl;
+    };
   }]);
